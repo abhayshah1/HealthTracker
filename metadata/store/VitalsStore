@@ -1,0 +1,117 @@
+{
+    "type": "xmlstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "VitalsStore",
+        "model": "Vitals",
+        "storeId": "VitalsStore"
+    },
+    "designerId": "9f3eaeca-e18c-45fa-8d64-1b77f95c9735",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/vitals.xml"
+            },
+            "designerId": "fd3f1852-709a-4cbb-a82f-5a012245db83",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Xml",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "record": "VitalRecord",
+                        "root": "PatientVitals"
+                    },
+                    "designerId": "e8688ec4-0015-4f94-9ce6-568c8cebaa41"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitDate"
+            },
+            "designerId": "382786be-d83b-4568-b49e-12f4cc47fa6a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "weight"
+            },
+            "designerId": "bc356ec4-df8a-4e40-ad64-926bc6cfb976"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vitaminB12"
+            },
+            "designerId": "935c82f5-3ab9-4ba7-832b-6bc822781c56"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "triglycerides"
+            },
+            "designerId": "365684d5-8ed4-406f-802e-97f98eddc8e1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vitaminD"
+            },
+            "designerId": "fad45f09-7680-4d45-90ea-ab558bdee705"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "visitDate"
+            },
+            "designerId": "240dbf1b-1cef-4d26-b591-3a71a3166885"
+        }
+    ]
+}

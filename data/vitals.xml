@@ -1,0 +1,10 @@
+<PatientVitals>
+  <VitalRecord>
+	<visitDate>2016-01-01</visitDate>
+	<weight>155</weight>
+  </VitalRecord>
+  <VitalRecord>
+  	<visitDate>2016-03-01</visitDate>
+  	<weight>160</weight>
+  </VitalRecord>
+</PatientVitals>

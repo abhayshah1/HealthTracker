@@ -1,0 +1,353 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MainView",
+        "itemId": "mainView",
+        "layout": "border"
+    },
+    "designerId": "0ba41f05-69d3-4f65-a25f-892e02e1b78d",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseDirection": "left",
+                "collapsible": true,
+                "itemId": "leftPanel",
+                "layout": "fit",
+                "layout|flex": 1,
+                "layout|region": "west",
+                "layout|split": true,
+                "title": "Vitals Data",
+                "width": 150
+            },
+            "designerId": "9df01c6c-16e4-4a43-bae2-9d564f0d36a1",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "itemId": "mygridpanel3",
+                        "store": "VitalsStore",
+                        "title": null
+                    },
+                    "designerId": "b19d35a5-bba6-4228-ab63-1c2f75f2e918",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "visitDate",
+                                "sortable": true,
+                                "text": "VisitDate"
+                            },
+                            "designerId": "2471f67b-ae76-4962-afe6-b85f4a8bd5d8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "weight",
+                                "text": "Weight"
+                            },
+                            "designerId": "ae50ac81-6950-4397-8bce-f68a2f864cb7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "vitaminB12",
+                                "text": "VitaminB12"
+                            },
+                            "designerId": "5c1ca9d0-25c8-4cfb-b58e-87fa544e9f96"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "triglycerides",
+                                "text": "Triglycerides"
+                            },
+                            "designerId": "b19cf472-ea11-4e22-ba00-c913bae8ed38"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "vitaminD",
+                                "text": "VitaminD"
+                            },
+                            "designerId": "51395fa6-0500-4589-8362-2343b555dee5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 5,
+                "collapseDirection": "right",
+                "collapsible": true,
+                "itemId": "rightPanel",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "title": "Vitals Chart"
+            },
+            "designerId": "5a0d4079-d7a4-487f-8bf8-939eececc032",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "container|align": "stretch",
+                        "itemId": "vitalsForm",
+                        "layout": "vbox",
+                        "title": null
+                    },
+                    "designerId": "45c865a0-3700-4fb0-a06c-e4480078e6ce",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.Chart",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "animate": [
+                                    "true"
+                                ],
+                                "height": 250,
+                                "insetPadding": 20,
+                                "store": "VitalsStore",
+                                "width": 400
+                            },
+                            "designerId": "3a205bfb-c8d5-4acf-aad0-220ca92a1e93",
+                            "isBuiltIn": true,
+                            "iconCls": "icon-line-chart",
+                            "autoName": "LineChart",
+                            "cn": [
+                                {
+                                    "type": "Ext.chart.axis.Time",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "adjustMaximumByMajorUnit": true,
+                                        "adjustMinimumByMajorUnit": true,
+                                        "dateFormat": "m/d/y",
+                                        "designer|displayName": "Visit Date",
+                                        "fields": [
+                                            "visitDate"
+                                        ],
+                                        "position": "bottom",
+                                        "step": [
+                                            "[\"d\",1]"
+                                        ],
+                                        "title": "Visited Date"
+                                    },
+                                    "designerId": "8c19e035-fff5-4325-add6-824dcc62e8c8"
+                                },
+                                {
+                                    "type": "Ext.chart.axis.Numeric",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fields": [
+                                            "weight",
+                                            "vitaminB12",
+                                            "triglycerides",
+                                            "vitaminD"
+                                        ],
+                                        "title": "Vitals Data"
+                                    },
+                                    "designerId": "60915304-e147-4c63-a45a-7ce9bab44ad6"
+                                },
+                                {
+                                    "type": "Ext.chart.series.Line",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "axis": [
+                                            "left"
+                                        ],
+                                        "itemId": "weightSeries",
+                                        "smooth": 3,
+                                        "xField": "visitDate",
+                                        "yField": [
+                                            "weight"
+                                        ]
+                                    },
+                                    "designerId": "802fae1b-d0f5-4ae6-b26a-0fb587cc33b0",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "itemId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.series.Line",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "axis": [
+                                            "left"
+                                        ],
+                                        "itemId": "b12Series",
+                                        "smooth": 3,
+                                        "xField": "visitDate",
+                                        "yField": [
+                                            "vitaminB12"
+                                        ]
+                                    },
+                                    "designerId": "82ed9b75-9697-461e-b0c8-790cbec5b1d6",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "itemId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.series.Line",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "axis": [
+                                            "left"
+                                        ],
+                                        "itemId": "triglyceridesSeries",
+                                        "smooth": 3,
+                                        "xField": "visitDate",
+                                        "yField": [
+                                            "triglycerides"
+                                        ]
+                                    },
+                                    "designerId": "5f49422e-962b-4631-9eb1-47f48641dfd5",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "itemId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.series.Line",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "axis": [
+                                            "left"
+                                        ],
+                                        "itemId": "vitaminDSeries",
+                                        "smooth": 3,
+                                        "xField": "visitDate",
+                                        "yField": [
+                                            "vitaminD"
+                                        ]
+                                    },
+                                    "designerId": "e55be258-2059-4df8-b521-b7c26468eedc",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "itemId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.Legend",
+                                    "reference": {
+                                        "name": "legend",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "vitalsLegend",
+                                        "position": "right"
+                                    },
+                                    "designerId": "2ac6e693-6b33-4dad-9203-4665fb605306",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "itemId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

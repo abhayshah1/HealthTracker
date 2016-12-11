@@ -1,0 +1,80 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "patientVitals",
+        "designer|userClassName": "Vitals"
+    },
+    "designerId": "581f45c7-3fb0-4d83-ac66-1f52eaae8f7b",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "visitDate",
+                "type": "date"
+            },
+            "designerId": "36037531-0aa3-463d-8941-0f9b537e2c98"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "weight",
+                "type": "float"
+            },
+            "designerId": "e7c20df5-f2f8-4210-809b-fe3d8b78a66e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vitaminB12",
+                "type": "float"
+            },
+            "designerId": "bec2c51d-ab87-4bd1-a52e-5de30816fb4b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "triglycerides",
+                "type": "float"
+            },
+            "designerId": "b5839810-759f-477c-b1f5-8dc7555fddf0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vitaminD",
+                "type": "float"
+            },
+            "designerId": "67bd9e1e-5135-49d7-9d8e-c0792c0a5cc7"
+        }
+    ]
+}

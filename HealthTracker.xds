@@ -1,0 +1,50 @@
+{
+    "name": "HealthTracker",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "4.0.4.84",
+            "frameworkVersion": "4.2.1.883"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/HealthTracker/",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "0ba41f05-69d3-4f65-a25f-892e02e1b78d"
+        ],
+        "store": [
+            "9f3eaeca-e18c-45fa-8d64-1b77f95c9735"
+        ],
+        "controller": [],
+        "model": [
+            "581f45c7-3fb0-4d83-ac66-1f52eaae8f7b"
+        ],
+        "resource": [
+            "9a78f845-6352-4ac7-b83a-4179296ac504"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
