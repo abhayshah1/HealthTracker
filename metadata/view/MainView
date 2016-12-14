@@ -165,6 +165,7 @@
                                     "true"
                                 ],
                                 "height": 250,
+                                "id": "vitalsLineChart",
                                 "insetPadding": 20,
                                 "store": "VitalsStore",
                                 "width": 400
@@ -214,33 +215,6 @@
                                         "title": "Vitals Data"
                                     },
                                     "designerId": "60915304-e147-4c63-a45a-7ce9bab44ad6"
-                                },
-                                {
-                                    "type": "Ext.chart.series.Line",
-                                    "reference": {
-                                        "name": "series",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "axis": [
-                                            "left"
-                                        ],
-                                        "itemId": "weightSeries",
-                                        "smooth": 3,
-                                        "xField": "visitDate",
-                                        "yField": [
-                                            "weight"
-                                        ]
-                                    },
-                                    "designerId": "802fae1b-d0f5-4ae6-b26a-0fb587cc33b0",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "itemId",
-                                            "type": "string"
-                                        }
-                                    ]
                                 },
                                 {
                                     "type": "Ext.chart.series.Line",
@@ -342,6 +316,98 @@
                                             "type": "string"
                                         }
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.CheckboxGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "id": "selectionGroup",
+                                "width": 400
+                            },
+                            "designerId": "4b81753f-e6d7-47ef-8647-cf0fa89d740e",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Box Label",
+                                        "fieldLabel": null,
+                                        "id": "weight"
+                                    },
+                                    "designerId": "e3f256a2-38bf-41db-b8db-461b46e7de0e",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "checkbox",
+                                                    "checked"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var vitalsLineChart = Ext.getCmp(\"vitalsLineChart\");\r",
+                                                    "\r",
+                                                    "if ( checked ) {\r",
+                                                    "    //create a series for the selected checkbox \r",
+                                                    "    var weightSeries = {\r",
+                                                    "        type: 'line',\r",
+                                                    "        itemId: 'weightSeries',\r",
+                                                    "        axis: 'left',\r",
+                                                    "        xField: 'visitDate',\r",
+                                                    "        yField: 'weight',\r",
+                                                    "        smooth: 3\r",
+                                                    "    };\r",
+                                                    "        \r",
+                                                    "    // add the series\r",
+                                                    "    vitalsLineChart.series.add( weightSeries );\r",
+                                                    "}\r",
+                                                    "else {\r",
+                                                    "    // identify the series to be removed. Assume for now there is only one weightSeries\r",
+                                                    "    var weightSeries = vitalsLineChart.series.items.filter(function (obj) {\r",
+                                                    "        return obj.itemId === 'weightSeries';\r",
+                                                    "    })[0];\r",
+                                                    "    \r",
+                                                    "    // remove the series\r",
+                                                    "    vitalsLineChart.series.remove(weightSeries);\r",
+                                                    "}\r",
+                                                    "    \r",
+                                                    "// redraw the chart\r",
+                                                    "vitalsLineChart.redraw();"
+                                                ]
+                                            },
+                                            "designerId": "658bb899-4fee-4c97-9b1d-a9ae13e60afb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Box Label",
+                                        "fieldLabel": null,
+                                        "id": "vitaminB12"
+                                    },
+                                    "designerId": "be209258-7779-48b4-b1ee-f2afe7ecf5da"
                                 }
                             ]
                         }

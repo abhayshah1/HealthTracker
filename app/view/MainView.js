@@ -24,7 +24,9 @@ Ext.define('HealthTracker.view.MainView', {
         'Ext.chart.Chart',
         'Ext.chart.axis.Time',
         'Ext.chart.series.Line',
-        'Ext.chart.Legend'
+        'Ext.chart.Legend',
+        'Ext.form.CheckboxGroup',
+        'Ext.form.field.Checkbox'
     ],
 
     itemId: 'mainView',
@@ -106,6 +108,7 @@ Ext.define('HealthTracker.view.MainView', {
                                 {
                                     xtype: 'chart',
                                     height: 250,
+                                    id: 'vitalsLineChart',
                                     width: 400,
                                     animate: true,
                                     insetPadding: 20,
@@ -141,14 +144,6 @@ Ext.define('HealthTracker.view.MainView', {
                                     series: [
                                         {
                                             type: 'line',
-                                            itemId: 'weightSeries',
-                                            axis: 'left',
-                                            xField: 'visitDate',
-                                            yField: 'weight',
-                                            smooth: 3
-                                        },
-                                        {
-                                            type: 'line',
                                             itemId: 'b12Series',
                                             axis: 'left',
                                             xField: 'visitDate',
@@ -176,6 +171,54 @@ Ext.define('HealthTracker.view.MainView', {
                                         itemId: 'vitalsLegend',
                                         position: 'right'
                                     }
+                                },
+                                {
+                                    xtype: 'checkboxgroup',
+                                    id: 'selectionGroup',
+                                    width: 400,
+                                    fieldLabel: 'Label',
+                                    items: [
+                                        {
+                                            xtype: 'checkboxfield',
+                                            handler: function(checkbox, checked) {
+                                                var vitalsLineChart = Ext.getCmp("vitalsLineChart");
+
+                                                if ( checked ) {
+                                                    //create a series for the selected checkbox
+                                                    var weightSeries = {
+                                                        type: 'line',
+                                                        itemId: 'weightSeries',
+                                                        axis: 'left',
+                                                        xField: 'visitDate',
+                                                        yField: 'weight',
+                                                        smooth: 3
+                                                    };
+
+                                                    // add the series
+                                                    vitalsLineChart.series.add( weightSeries );
+                                                }
+                                                else {
+                                                    // identify the series to be removed. Assume for now there is only one weightSeries
+                                                    var weightSeries = vitalsLineChart.series.items.filter(function (obj) {
+                                                        return obj.itemId === 'weightSeries';
+                                                    })[0];
+
+                                                    // remove the series
+                                                    vitalsLineChart.series.remove(weightSeries);
+                                                }
+
+                                                // redraw the chart
+                                                vitalsLineChart.redraw();
+                                            },
+                                            id: 'weight',
+                                            boxLabel: 'Box Label'
+                                        },
+                                        {
+                                            xtype: 'checkboxfield',
+                                            id: 'vitaminB12',
+                                            boxLabel: 'Box Label'
+                                        }
+                                    ]
                                 }
                             ]
                         }
