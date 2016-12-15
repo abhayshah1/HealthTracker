@@ -50,15 +50,6 @@
                                             "id": "60915304-e147-4c63-a45a-7ce9bab44ad6"
                                         },
                                         {
-                                            "id": "82ed9b75-9697-461e-b0c8-790cbec5b1d6"
-                                        },
-                                        {
-                                            "id": "5f49422e-962b-4631-9eb1-47f48641dfd5"
-                                        },
-                                        {
-                                            "id": "e55be258-2059-4df8-b521-b7c26468eedc"
-                                        },
-                                        {
                                             "id": "2ac6e693-6b33-4dad-9203-4665fb605306"
                                         }
                                     ]
@@ -76,12 +67,21 @@
                                         },
                                         {
                                             "id": "be209258-7779-48b4-b1ee-f2afe7ecf5da"
+                                        },
+                                        {
+                                            "id": "544a4c9f-dd76-4d08-be3c-c75040a94051"
+                                        },
+                                        {
+                                            "id": "c1708181-0dc7-416b-99a5-1ba3bee99e15"
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "7a707348-6151-4ca7-814b-62c6c4b4a7ea"
                 }
             ]
         },
@@ -153,7 +153,7 @@
     },
     "inspectorState": {
         "topInstance": "0ba41f05-69d3-4f65-a25f-892e02e1b78d",
-        "selectedInstance": "82ed9b75-9697-461e-b0c8-790cbec5b1d6"
+        "selectedInstance": "658bb899-4fee-4c97-9b1d-a9ae13e60afb"
     },
     "codeState": {
         "topInstance": "0ba41f05-69d3-4f65-a25f-892e02e1b78d"

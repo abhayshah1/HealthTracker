@@ -217,87 +217,6 @@
                                     "designerId": "60915304-e147-4c63-a45a-7ce9bab44ad6"
                                 },
                                 {
-                                    "type": "Ext.chart.series.Line",
-                                    "reference": {
-                                        "name": "series",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "axis": [
-                                            "left"
-                                        ],
-                                        "itemId": "b12Series",
-                                        "smooth": 3,
-                                        "xField": "visitDate",
-                                        "yField": [
-                                            "vitaminB12"
-                                        ]
-                                    },
-                                    "designerId": "82ed9b75-9697-461e-b0c8-790cbec5b1d6",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "itemId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.chart.series.Line",
-                                    "reference": {
-                                        "name": "series",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "axis": [
-                                            "left"
-                                        ],
-                                        "itemId": "triglyceridesSeries",
-                                        "smooth": 3,
-                                        "xField": "visitDate",
-                                        "yField": [
-                                            "triglycerides"
-                                        ]
-                                    },
-                                    "designerId": "5f49422e-962b-4631-9eb1-47f48641dfd5",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "itemId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.chart.series.Line",
-                                    "reference": {
-                                        "name": "series",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "axis": [
-                                            "left"
-                                        ],
-                                        "itemId": "vitaminDSeries",
-                                        "smooth": 3,
-                                        "xField": "visitDate",
-                                        "yField": [
-                                            "vitaminD"
-                                        ]
-                                    },
-                                    "designerId": "e55be258-2059-4df8-b521-b7c26468eedc",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "itemId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
                                     "type": "Ext.chart.Legend",
                                     "reference": {
                                         "name": "legend",
@@ -327,7 +246,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Label",
+                                "border": 1,
+                                "fieldLabel": "",
                                 "id": "selectionGroup",
                                 "width": 400
                             },
@@ -341,7 +261,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "boxLabel": "Box Label",
+                                        "boxLabel": "Weight",
                                         "fieldLabel": null,
                                         "id": "weight"
                                     },
@@ -364,30 +284,31 @@
                                                     "var vitalsLineChart = Ext.getCmp(\"vitalsLineChart\");\r",
                                                     "\r",
                                                     "if ( checked ) {\r",
-                                                    "    //create a series for the selected checkbox \r",
+                                                    "    //create a series for the selected checkbox\r",
                                                     "    var weightSeries = {\r",
                                                     "        type: 'line',\r",
                                                     "        itemId: 'weightSeries',\r",
+                                                    "        id: 'weightSeries',\r",
+                                                    "        seriesId: 'weightSeries',\r",
                                                     "        axis: 'left',\r",
                                                     "        xField: 'visitDate',\r",
                                                     "        yField: 'weight',\r",
                                                     "        smooth: 3\r",
                                                     "    };\r",
-                                                    "        \r",
+                                                    "\r",
                                                     "    // add the series\r",
                                                     "    vitalsLineChart.series.add( weightSeries );\r",
                                                     "}\r",
                                                     "else {\r",
-                                                    "    // identify the series to be removed. Assume for now there is only one weightSeries\r",
-                                                    "    var weightSeries = vitalsLineChart.series.items.filter(function (obj) {\r",
-                                                    "        return obj.itemId === 'weightSeries';\r",
-                                                    "    })[0];\r",
-                                                    "    \r",
+                                                    "    var weightSeries = vitalsLineChart.series.getByKey('weightSeries');\r",
+                                                    "    vitalsLineChart.series.remove(weightSeries);\r",
+                                                    "\r",
                                                     "    // remove the series\r",
                                                     "    vitalsLineChart.series.remove(weightSeries);\r",
                                                     "}\r",
-                                                    "    \r",
+                                                    "\r",
                                                     "// redraw the chart\r",
+                                                    "vitalsLineChart.surface.removeAll();\r",
                                                     "vitalsLineChart.redraw();"
                                                 ]
                                             },
@@ -403,17 +324,91 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "boxLabel": "Box Label",
+                                        "boxLabel": "Vitamin B12",
                                         "fieldLabel": null,
                                         "id": "vitaminB12"
                                     },
                                     "designerId": "be209258-7779-48b4-b1ee-f2afe7ecf5da"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Triglycerides",
+                                        "fieldLabel": null,
+                                        "id": "Triglycerides"
+                                    },
+                                    "designerId": "544a4c9f-dd76-4d08-be3c-c75040a94051"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "VitaminD",
+                                        "fieldLabel": null,
+                                        "id": "vitaminD"
+                                    },
+                                    "designerId": "c1708181-0dc7-416b-99a5-1ba3bee99e15"
                                 }
                             ]
                         }
                     ]
                 }
             ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "checked",
+                    "seriesId",
+                    "chart"
+                ],
+                "fn": "toggleChartSeries",
+                "implHandler": [
+                    "if ( checked ) {\r",
+                    "    //create a series for the selected checkbox\r",
+                    "    var weightSeries = {\r",
+                    "        type: 'line',\r",
+                    "        itemId: 'weightSeries',\r",
+                    "        id: 'weightSeries',\r",
+                    "        seriesId: 'weightSeries',\r",
+                    "        axis: 'left',\r",
+                    "        xField: 'visitDate',\r",
+                    "        yField: 'weight',\r",
+                    "        smooth: 3\r",
+                    "    };\r",
+                    "\r",
+                    "    // add the series\r",
+                    "    vitalsLineChart.series.add( weightSeries );\r",
+                    "}\r",
+                    "else {\r",
+                    "    var weightSeries = vitalsLineChart.series.getByKey('weightSeries');\r",
+                    "    vitalsLineChart.series.remove(weightSeries);\r",
+                    "\r",
+                    "    // remove the series\r",
+                    "    vitalsLineChart.series.remove(weightSeries);\r",
+                    "}\r",
+                    "\r",
+                    "// redraw the chart\r",
+                    "vitalsLineChart.surface.removeAll();\r",
+                    "vitalsLineChart.redraw();"
+                ]
+            },
+            "designerId": "7a707348-6151-4ca7-814b-62c6c4b4a7ea"
         }
     ]
 }

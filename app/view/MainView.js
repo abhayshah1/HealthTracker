@@ -23,7 +23,6 @@ Ext.define('HealthTracker.view.MainView', {
         'Ext.form.Panel',
         'Ext.chart.Chart',
         'Ext.chart.axis.Time',
-        'Ext.chart.series.Line',
         'Ext.chart.Legend',
         'Ext.form.CheckboxGroup',
         'Ext.form.field.Checkbox'
@@ -141,32 +140,6 @@ Ext.define('HealthTracker.view.MainView', {
                                             position: 'left'
                                         }
                                     ],
-                                    series: [
-                                        {
-                                            type: 'line',
-                                            itemId: 'b12Series',
-                                            axis: 'left',
-                                            xField: 'visitDate',
-                                            yField: 'vitaminB12',
-                                            smooth: 3
-                                        },
-                                        {
-                                            type: 'line',
-                                            itemId: 'triglyceridesSeries',
-                                            axis: 'left',
-                                            xField: 'visitDate',
-                                            yField: 'triglycerides',
-                                            smooth: 3
-                                        },
-                                        {
-                                            type: 'line',
-                                            itemId: 'vitaminDSeries',
-                                            axis: 'left',
-                                            xField: 'visitDate',
-                                            yField: 'vitaminD',
-                                            smooth: 3
-                                        }
-                                    ],
                                     legend: {
                                         itemId: 'vitalsLegend',
                                         position: 'right'
@@ -174,9 +147,10 @@ Ext.define('HealthTracker.view.MainView', {
                                 },
                                 {
                                     xtype: 'checkboxgroup',
+                                    border: 1,
                                     id: 'selectionGroup',
                                     width: 400,
-                                    fieldLabel: 'Label',
+                                    fieldLabel: '',
                                     items: [
                                         {
                                             xtype: 'checkboxfield',
@@ -188,6 +162,8 @@ Ext.define('HealthTracker.view.MainView', {
                                                     var weightSeries = {
                                                         type: 'line',
                                                         itemId: 'weightSeries',
+                                                        id: 'weightSeries',
+                                                        seriesId: 'weightSeries',
                                                         axis: 'left',
                                                         xField: 'visitDate',
                                                         yField: 'weight',
@@ -198,25 +174,34 @@ Ext.define('HealthTracker.view.MainView', {
                                                     vitalsLineChart.series.add( weightSeries );
                                                 }
                                                 else {
-                                                    // identify the series to be removed. Assume for now there is only one weightSeries
-                                                    var weightSeries = vitalsLineChart.series.items.filter(function (obj) {
-                                                        return obj.itemId === 'weightSeries';
-                                                    })[0];
+                                                    var weightSeries = vitalsLineChart.series.getByKey('weightSeries');
+                                                    vitalsLineChart.series.remove(weightSeries);
 
                                                     // remove the series
                                                     vitalsLineChart.series.remove(weightSeries);
                                                 }
 
                                                 // redraw the chart
+                                                vitalsLineChart.surface.removeAll();
                                                 vitalsLineChart.redraw();
                                             },
                                             id: 'weight',
-                                            boxLabel: 'Box Label'
+                                            boxLabel: 'Weight'
                                         },
                                         {
                                             xtype: 'checkboxfield',
                                             id: 'vitaminB12',
-                                            boxLabel: 'Box Label'
+                                            boxLabel: 'Vitamin B12'
+                                        },
+                                        {
+                                            xtype: 'checkboxfield',
+                                            id: 'Triglycerides',
+                                            boxLabel: 'Triglycerides'
+                                        },
+                                        {
+                                            xtype: 'checkboxfield',
+                                            id: 'vitaminD',
+                                            boxLabel: 'VitaminD'
                                         }
                                     ]
                                 }
@@ -228,6 +213,36 @@ Ext.define('HealthTracker.view.MainView', {
         });
 
         me.callParent(arguments);
+    },
+
+    toggleChartSeries: function(checked, seriesId, chart) {
+        if ( checked ) {
+            //create a series for the selected checkbox
+            var weightSeries = {
+                type: 'line',
+                itemId: 'weightSeries',
+                id: 'weightSeries',
+                seriesId: 'weightSeries',
+                axis: 'left',
+                xField: 'visitDate',
+                yField: 'weight',
+                smooth: 3
+            };
+
+            // add the series
+            vitalsLineChart.series.add( weightSeries );
+        }
+        else {
+            var weightSeries = vitalsLineChart.series.getByKey('weightSeries');
+            vitalsLineChart.series.remove(weightSeries);
+
+            // remove the series
+            vitalsLineChart.series.remove(weightSeries);
+        }
+
+        // redraw the chart
+        vitalsLineChart.surface.removeAll();
+        vitalsLineChart.redraw();
     }
 
 });
