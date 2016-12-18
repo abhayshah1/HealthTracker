@@ -147,6 +147,7 @@
                     "userConfig": {
                         "bodyPadding": 10,
                         "container|align": "stretch",
+                        "id": "vitalsForm",
                         "itemId": "vitalsForm",
                         "layout": "vbox",
                         "title": null
@@ -281,35 +282,13 @@
                                                 ],
                                                 "fn": "handler",
                                                 "implHandler": [
+                                                    "// Get the chart to update\r",
                                                     "var vitalsLineChart = Ext.getCmp(\"vitalsLineChart\");\r",
                                                     "\r",
-                                                    "if ( checked ) {\r",
-                                                    "    //create a series for the selected checkbox\r",
-                                                    "    var weightSeries = {\r",
-                                                    "        type: 'line',\r",
-                                                    "        itemId: 'weightSeries',\r",
-                                                    "        id: 'weightSeries',\r",
-                                                    "        seriesId: 'weightSeries',\r",
-                                                    "        axis: 'left',\r",
-                                                    "        xField: 'visitDate',\r",
-                                                    "        yField: 'weight',\r",
-                                                    "        smooth: 3\r",
-                                                    "    };\r",
+                                                    "// Assume one form by that name\r",
+                                                    "var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];\r",
                                                     "\r",
-                                                    "    // add the series\r",
-                                                    "    vitalsLineChart.series.add( weightSeries );\r",
-                                                    "}\r",
-                                                    "else {\r",
-                                                    "    var weightSeries = vitalsLineChart.series.getByKey('weightSeries');\r",
-                                                    "    vitalsLineChart.series.remove(weightSeries);\r",
-                                                    "\r",
-                                                    "    // remove the series\r",
-                                                    "    vitalsLineChart.series.remove(weightSeries);\r",
-                                                    "}\r",
-                                                    "\r",
-                                                    "// redraw the chart\r",
-                                                    "vitalsLineChart.surface.removeAll();\r",
-                                                    "vitalsLineChart.redraw();"
+                                                    "vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );"
                                                 ]
                                             },
                                             "designerId": "658bb899-4fee-4c97-9b1d-a9ae13e60afb"
@@ -328,7 +307,34 @@
                                         "fieldLabel": null,
                                         "id": "vitaminB12"
                                     },
-                                    "designerId": "be209258-7779-48b4-b1ee-f2afe7ecf5da"
+                                    "designerId": "be209258-7779-48b4-b1ee-f2afe7ecf5da",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "checkbox",
+                                                    "checked"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "// Get the chart to update\r",
+                                                    "var vitalsLineChart = Ext.getCmp(\"vitalsLineChart\");\r",
+                                                    "\r",
+                                                    "// Assume one form by that name\r",
+                                                    "var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];\r",
+                                                    "\r",
+                                                    "vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );"
+                                                ]
+                                            },
+                                            "designerId": "77cfc834-7b56-4ac7-b8b1-d4c028607c94"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
@@ -342,7 +348,34 @@
                                         "fieldLabel": null,
                                         "id": "Triglycerides"
                                     },
-                                    "designerId": "544a4c9f-dd76-4d08-be3c-c75040a94051"
+                                    "designerId": "544a4c9f-dd76-4d08-be3c-c75040a94051",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "checkbox",
+                                                    "checked"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "// Get the chart to update\r",
+                                                    "var vitalsLineChart = Ext.getCmp(\"vitalsLineChart\");\r",
+                                                    "\r",
+                                                    "// Assume one form by that name\r",
+                                                    "var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];\r",
+                                                    "\r",
+                                                    "vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );"
+                                                ]
+                                            },
+                                            "designerId": "c9f69c3c-3301-4ea9-a720-f44ebbf74944"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
@@ -356,59 +389,88 @@
                                         "fieldLabel": null,
                                         "id": "vitaminD"
                                     },
-                                    "designerId": "c1708181-0dc7-416b-99a5-1ba3bee99e15"
+                                    "designerId": "c1708181-0dc7-416b-99a5-1ba3bee99e15",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "checkbox",
+                                                    "checked"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "// Get the chart to update\r",
+                                                    "var vitalsLineChart = Ext.getCmp(\"vitalsLineChart\");\r",
+                                                    "\r",
+                                                    "// Assume one form by that name\r",
+                                                    "var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];\r",
+                                                    "\r",
+                                                    "vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );"
+                                                ]
+                                            },
+                                            "designerId": "92b850fe-99c7-4b8b-b102-aa56ada97c03"
+                                        }
+                                    ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "checked",
+                                    "checkbox",
+                                    "chart"
+                                ],
+                                "fn": "toggleChartSeries",
+                                "implHandler": [
+                                    "var checkboxId = checkbox.id;\r",
+                                    "var seriesName = checkboxId.concat('Series');\r",
+                                    "\r",
+                                    "if ( checked ) {\r",
+                                    "    //create a series for the selected checkbox\r",
+                                    "    var series = {\r",
+                                    "        type: 'line',\r",
+                                    "        itemId: seriesName,\r",
+                                    "        id: seriesName,\r",
+                                    "        seriesId: seriesName,\r",
+                                    "        axis: 'left',\r",
+                                    "        xField: 'visitDate',\r",
+                                    "        yField: checkboxId,\r",
+                                    "        smooth: 3\r",
+                                    "    };\r",
+                                    "\r",
+                                    "    // add the series\r",
+                                    "    chart.series.add( series );\r",
+                                    "}\r",
+                                    "else {\r",
+                                    "    var series = chart.series.getByKey(seriesName);\r",
+                                    "\r",
+                                    "    // remove the series\r",
+                                    "    chart.series.remove(series);\r",
+                                    "}\r",
+                                    "\r",
+                                    "// redraw the chart\r",
+                                    "chart.surface.removeAll();\r",
+                                    "chart.redraw();"
+                                ]
+                            },
+                            "designerId": "c13afb85-e523-498c-bb75-fcfa9378ab1f"
                         }
                     ]
                 }
             ]
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "checked",
-                    "seriesId",
-                    "chart"
-                ],
-                "fn": "toggleChartSeries",
-                "implHandler": [
-                    "if ( checked ) {\r",
-                    "    //create a series for the selected checkbox\r",
-                    "    var weightSeries = {\r",
-                    "        type: 'line',\r",
-                    "        itemId: 'weightSeries',\r",
-                    "        id: 'weightSeries',\r",
-                    "        seriesId: 'weightSeries',\r",
-                    "        axis: 'left',\r",
-                    "        xField: 'visitDate',\r",
-                    "        yField: 'weight',\r",
-                    "        smooth: 3\r",
-                    "    };\r",
-                    "\r",
-                    "    // add the series\r",
-                    "    vitalsLineChart.series.add( weightSeries );\r",
-                    "}\r",
-                    "else {\r",
-                    "    var weightSeries = vitalsLineChart.series.getByKey('weightSeries');\r",
-                    "    vitalsLineChart.series.remove(weightSeries);\r",
-                    "\r",
-                    "    // remove the series\r",
-                    "    vitalsLineChart.series.remove(weightSeries);\r",
-                    "}\r",
-                    "\r",
-                    "// redraw the chart\r",
-                    "vitalsLineChart.surface.removeAll();\r",
-                    "vitalsLineChart.redraw();"
-                ]
-            },
-            "designerId": "7a707348-6151-4ca7-814b-62c6c4b4a7ea"
         }
     ]
 }
