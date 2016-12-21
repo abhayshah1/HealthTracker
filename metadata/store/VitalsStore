@@ -22,7 +22,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/vitals.xml"
+                "url": "data/vitalsfull.xml"
             },
             "designerId": "fd3f1852-709a-4cbb-a82f-5a012245db83",
             "cn": [

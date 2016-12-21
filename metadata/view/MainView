@@ -346,7 +346,7 @@
                                     "userConfig": {
                                         "boxLabel": "Triglycerides",
                                         "fieldLabel": null,
-                                        "id": "Triglycerides"
+                                        "id": "triglycerides"
                                     },
                                     "designerId": "544a4c9f-dd76-4d08-be3c-c75040a94051",
                                     "cn": [

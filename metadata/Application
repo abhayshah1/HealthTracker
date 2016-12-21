@@ -7,7 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "models": [
-            "Vitals"
+            "Vitals",
+            "VitalsType"
         ],
         "name": "HealthTracker",
         "stores": [
