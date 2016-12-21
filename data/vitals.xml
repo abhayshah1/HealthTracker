@@ -2,6 +2,9 @@
   <VitalRecord>
 	<visitDate>2016-01-01</visitDate>
 	<weight>155</weight>
+	<vitaminB12/>
+	<triglycerides/>
+	<vitaminD/>
   </VitalRecord>
   <VitalRecord>
   	<visitDate>2016-03-01</visitDate>
