@@ -33,7 +33,7 @@ Ext.define('HealthTracker.store.VitalsStore', {
             storeId: 'VitalsStore',
             proxy: {
                 type: 'ajax',
-                url: 'data/vitals.xml',
+                url: 'data/vitalsfull.xml',
                 reader: {
                     type: 'xml',
                     root: 'PatientVitals',
