@@ -223,7 +223,7 @@ Ext.define('HealthTracker.view.MainView', {
 
                                                 vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );
                                             },
-                                            id: 'Triglycerides',
+                                            id: 'triglycerides',
                                             boxLabel: 'Triglycerides'
                                         },
                                         {
