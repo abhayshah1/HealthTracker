@@ -191,11 +191,14 @@
                                         "fields": [
                                             "visitDate"
                                         ],
+                                        "fromDate": 1333080000000,
+                                        "majorTickSteps": 10,
                                         "position": "bottom",
                                         "step": [
-                                            "[\"d\",1]"
+                                            "[Ext.Date.YEAR,1]"
                                         ],
-                                        "title": "Visited Date"
+                                        "title": "Visited Date",
+                                        "toDate": 1481432400000
                                     },
                                     "designerId": "8c19e035-fff5-4325-add6-824dcc62e8c8"
                                 },
@@ -447,8 +450,7 @@
                                     "        seriesId: seriesName,\r",
                                     "        axis: 'left',\r",
                                     "        xField: 'visitDate',\r",
-                                    "        yField: checkboxId,\r",
-                                    "        smooth: 3\r",
+                                    "        yField: checkboxId\r",
                                     "    };\r",
                                     "\r",
                                     "    // add the series\r",

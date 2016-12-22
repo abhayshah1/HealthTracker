@@ -110,8 +110,7 @@ Ext.define('HealthTracker.view.MainView', {
                                         seriesId: seriesName,
                                         axis: 'left',
                                         xField: 'visitDate',
-                                        yField: checkboxId,
-                                        smooth: 3
+                                        yField: checkboxId
                                     };
 
                                     // add the series
@@ -150,15 +149,18 @@ Ext.define('HealthTracker.view.MainView', {
                                             fields: [
                                                 'visitDate'
                                             ],
+                                            majorTickSteps: 10,
                                             position: 'bottom',
                                             title: 'Visited Date',
                                             adjustMaximumByMajorUnit: true,
                                             adjustMinimumByMajorUnit: true,
                                             dateFormat: 'm/d/y',
+                                            fromDate: 'Fri Mar 30 2012 00:00:00 GMT-0400 (Eastern Daylight Time)',
                                             step: [
-                                                'd',
+                                                Ext.Date.YEAR,
                                                 1
-                                            ]
+                                            ],
+                                            toDate: 'Sun Dec 11 2016 00:00:00 GMT-0500 (Eastern Standard Time)'
                                         },
                                         {
                                             type: 'Numeric',
