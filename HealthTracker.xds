@@ -34,9 +34,12 @@
             "0ba41f05-69d3-4f65-a25f-892e02e1b78d"
         ],
         "store": [
-            "9f3eaeca-e18c-45fa-8d64-1b77f95c9735"
+            "9f3eaeca-e18c-45fa-8d64-1b77f95c9735",
+            "b7badae3-8ec1-4b4f-8cc2-d9b2b9b062a4"
         ],
-        "controller": [],
+        "controller": [
+            "4656d5d1-f740-4ef9-ba5e-c3d7ebe4d3d1"
+        ],
         "model": [
             "581f45c7-3fb0-4d83-ac66-1f52eaae8f7b",
             "83845071-8ebf-4f67-a080-2c44d097ba2d"

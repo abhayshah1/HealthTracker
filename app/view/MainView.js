@@ -20,12 +20,11 @@ Ext.define('HealthTracker.view.MainView', {
         'Ext.grid.Panel',
         'Ext.grid.column.Date',
         'Ext.grid.column.Number',
+        'Ext.form.CheckboxGroup',
         'Ext.form.Panel',
         'Ext.chart.Chart',
         'Ext.chart.axis.Time',
-        'Ext.chart.Legend',
-        'Ext.form.CheckboxGroup',
-        'Ext.form.field.Checkbox'
+        'Ext.chart.Legend'
     ],
 
     itemId: 'mainView',
@@ -86,20 +85,43 @@ Ext.define('HealthTracker.view.MainView', {
                 },
                 {
                     xtype: 'panel',
-                    flex: 1,
                     region: 'center',
+                    itemId: 'middlePanel',
+                    collapseDirection: 'left',
+                    collapsed: true,
+                    collapsible: true,
+                    title: 'Vitals Chart'
+                },
+                {
+                    xtype: 'panel',
+                    flex: 1,
+                    region: 'east',
                     split: true,
                     itemId: 'rightPanel',
+                    width: 150,
                     bodyPadding: 5,
                     collapseDirection: 'right',
                     collapsible: true,
-                    title: 'Vitals Chart',
+                    title: 'Vitals Chart Builder',
                     items: [
                         {
+                            xtype: 'checkboxgroup',
+                            border: 1,
+                            id: 'selectionGroup',
+                            width: 400,
+                            fieldLabel: '',
+                            columns: 'auto'
+                        },
+                        {
                             xtype: 'form',
-                            toggleChartSeries: function(checked, checkbox, chart) {
+                            toggleChartSeries: function(checked, checkbox) {
+                                // Get the chart to update
+                                var chart = Ext.getCmp("vitalsLineChart");
+
+
                                 var checkboxId = checkbox.id;
                                 var seriesName = checkboxId.concat('Series');
+
 
                                 if ( checked ) {
                                     //create a series for the selected checkbox
@@ -120,12 +142,13 @@ Ext.define('HealthTracker.view.MainView', {
                                     var series = chart.series.getByKey(seriesName);
 
                                     // remove the series
+                                    //series.clear();
                                     chart.series.remove(series);
                                 }
 
                                 // redraw the chart
-                                chart.surface.removeAll();
-                                chart.redraw();
+                                //chart.surface.removeAll();
+                                chart.redraw(false);
                             },
                             id: 'vitalsForm',
                             itemId: 'vitalsForm',
@@ -164,12 +187,6 @@ Ext.define('HealthTracker.view.MainView', {
                                         },
                                         {
                                             type: 'Numeric',
-                                            fields: [
-                                                'weight',
-                                                'vitaminB12',
-                                                'triglycerides',
-                                                'vitaminD'
-                                            ],
                                             title: 'Vitals Data',
                                             position: 'left'
                                         }
@@ -178,71 +195,6 @@ Ext.define('HealthTracker.view.MainView', {
                                         itemId: 'vitalsLegend',
                                         position: 'right'
                                     }
-                                },
-                                {
-                                    xtype: 'checkboxgroup',
-                                    border: 1,
-                                    id: 'selectionGroup',
-                                    width: 400,
-                                    fieldLabel: '',
-                                    items: [
-                                        {
-                                            xtype: 'checkboxfield',
-                                            handler: function(checkbox, checked) {
-                                                // Get the chart to update
-                                                var vitalsLineChart = Ext.getCmp("vitalsLineChart");
-
-                                                // Assume one form by that name
-                                                var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];
-
-                                                vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );
-                                            },
-                                            id: 'weight',
-                                            boxLabel: 'Weight'
-                                        },
-                                        {
-                                            xtype: 'checkboxfield',
-                                            handler: function(checkbox, checked) {
-                                                // Get the chart to update
-                                                var vitalsLineChart = Ext.getCmp("vitalsLineChart");
-
-                                                // Assume one form by that name
-                                                var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];
-
-                                                vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );
-                                            },
-                                            id: 'vitaminB12',
-                                            boxLabel: 'Vitamin B12'
-                                        },
-                                        {
-                                            xtype: 'checkboxfield',
-                                            handler: function(checkbox, checked) {
-                                                // Get the chart to update
-                                                var vitalsLineChart = Ext.getCmp("vitalsLineChart");
-
-                                                // Assume one form by that name
-                                                var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];
-
-                                                vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );
-                                            },
-                                            id: 'triglycerides',
-                                            boxLabel: 'Triglycerides'
-                                        },
-                                        {
-                                            xtype: 'checkboxfield',
-                                            handler: function(checkbox, checked) {
-                                                // Get the chart to update
-                                                var vitalsLineChart = Ext.getCmp("vitalsLineChart");
-
-                                                // Assume one form by that name
-                                                var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];
-
-                                                vitalsForm.toggleChartSeries( checked, checkbox, vitalsLineChart );
-                                            },
-                                            id: 'vitaminD',
-                                            boxLabel: 'VitaminD'
-                                        }
-                                    ]
                                 }
                             ]
                         }

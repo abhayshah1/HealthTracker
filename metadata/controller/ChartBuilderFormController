@@ -1,0 +1,77 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ChartBuilderFormController"
+    },
+    "designerId": "4656d5d1-f740-4ef9-ba5e-c3d7ebe4d3d1",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "checkboxfield",
+                "designer|targetType": "Ext.form.field.Checkbox",
+                "fn": "onCheckboxfieldChange",
+                "implHandler": [
+                    "// Assume one form by that name\r",
+                    "var vitalsForm = Ext.ComponentQuery.query('#vitalsForm')[0];\r",
+                    "\r",
+                    "vitalsForm.toggleChartSeries( newValue, field );"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "designerId": "87116ffc-6089-4341-b74a-5571b7502b27"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#selectionGroup",
+                "designer|targetType": "Ext.form.CheckboxGroup",
+                "fn": "onSelectionGroupBeforeRender",
+                "implHandler": [
+                    "// Query the Chart Element Store to determine which options are available\r",
+                    "// The store is set to auto load so no need to load manually\r",
+                    "var chartElementStore = Ext.data.StoreManager.lookup('ChartElementStore');\r",
+                    "\r",
+                    "var chartElementArray = chartElementStore.data;\r",
+                    "\r",
+                    "for ( i=0; i<chartElementArray.length; ++i ) {\r",
+                    "    \r",
+                    "    chartElementID = chartElementArray.items[i].data.id;\r",
+                    "    chartElementName = chartElementArray.items[i].data.name;\r",
+                    "    \r",
+                    "    // Add the check box\r",
+                    "    var checkboxfield = new Ext.form.field.Checkbox (\r",
+                    "        {\r",
+                    "            xtype: 'checkboxfield',\r",
+                    "            id: chartElementID,\r",
+                    "            boxLabel: chartElementName\r",
+                    "        }\r",
+                    "    );\r",
+                    "    \r",
+                    "    component.add( checkboxfield );\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "a73cb66a-af61-431b-ae69-f6b664146e18"
+        }
+    ]
+}

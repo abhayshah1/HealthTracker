@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[\r",
+            "    {\r",
+            "        \"id\": \"weight\",\r",
+            "        \"name\": \"Weight\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"id\": \"vitaminB12\",\r",
+            "        \"name\": \"Vitamin B12\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"id\": \"triglycerides\",\r",
+            "        \"name\": \"Triglycerides\",\r",
+            "    },\r",
+            "    {\r",
+            "        \"id\": \"vitaminD\",\r",
+            "        \"name\": \"Vitamin D\",\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "ChartElementStore",
+        "model": "ChartElements",
+        "storeId": "ChartElementStore"
+    },
+    "designerId": "b7badae3-8ec1-4b4f-8cc2-d9b2b9b062a4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/ChartElementList.txt"
+            },
+            "designerId": "210bda20-972e-4602-b5f9-d1f324558880",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "id",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "4355171f-0627-4de9-aab1-1b6bdd0afc5d"
+                }
+            ]
+        }
+    ]
+}

@@ -15,20 +15,29 @@
 
 // @require @packageOverrides
 Ext.Loader.setConfig({
+    disableCaching: false,
     enabled: true
 });
 
 
 Ext.application({
+
+    requires: [
+        'Ext.Loader'
+    ],
     models: [
         'Vitals',
-        'VitalsType'
+        'ChartElements'
     ],
     stores: [
-        'VitalsStore'
+        'VitalsStore',
+        'ChartElementStore'
     ],
     views: [
         'MainView'
+    ],
+    controllers: [
+        'ChartBuilderFormController'
     ],
     name: 'HealthTracker',
 

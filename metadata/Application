@@ -6,17 +6,36 @@
     },
     "codeClass": null,
     "userConfig": {
+        "controllers": [
+            "ChartBuilderFormController"
+        ],
         "models": [
             "Vitals",
             "VitalsType"
         ],
         "name": "HealthTracker",
         "stores": [
-            "VitalsStore"
+            "VitalsStore",
+            "ChartElementStore"
         ],
         "views": [
             "MainView"
         ]
     },
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disableCaching": false,
+                "enabled": true
+            },
+            "designerId": "38862959-23f6-4023-8405-5fadc9f9531f"
+        }
+    ]
 }
