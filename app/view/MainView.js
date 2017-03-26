@@ -24,7 +24,8 @@ Ext.define('HealthTracker.view.MainView', {
         'Ext.form.Panel',
         'Ext.chart.Chart',
         'Ext.chart.axis.Time',
-        'Ext.chart.Legend'
+        'Ext.chart.Legend',
+        'Ext.chart.series.Column'
     ],
 
     itemId: 'mainView',
@@ -195,6 +196,47 @@ Ext.define('HealthTracker.view.MainView', {
                                         itemId: 'vitalsLegend',
                                         position: 'right'
                                     }
+                                },
+                                {
+                                    xtype: 'chart',
+                                    height: 250,
+                                    id: 'activityColumnChart',
+                                    width: 400,
+                                    animate: true,
+                                    insetPadding: 20,
+                                    store: 'GoogleFitStore',
+                                    axes: [
+                                        {
+                                            type: 'Time',
+                                            fields: [
+                                                'date'
+                                            ],
+                                            position: 'bottom',
+                                            title: 'Time Axis',
+                                            dateFormat: 'm/d'
+                                        },
+                                        {
+                                            type: 'Numeric',
+                                            fields: [
+                                                'y'
+                                            ],
+                                            title: 'Numeric Axis',
+                                            position: 'left'
+                                        }
+                                    ],
+                                    series: [
+                                        {
+                                            type: 'column',
+                                            label: {
+                                                display: 'insideEnd',
+                                                field: 'y',
+                                                color: '#333',
+                                                'text-anchor': 'middle'
+                                            },
+                                            xField: 'x',
+                                            yField: 'y'
+                                        }
+                                    ]
                                 }
                             ]
                         }

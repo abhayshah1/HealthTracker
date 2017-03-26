@@ -15,8 +15,7 @@
 
 // @require @packageOverrides
 Ext.Loader.setConfig({
-    disableCaching: false,
-    enabled: true
+    disableCaching: false
 });
 
 
@@ -31,7 +30,8 @@ Ext.application({
     ],
     stores: [
         'VitalsStore',
-        'ChartElementStore'
+        'ChartElementStore',
+        'GoogleFitStore'
     ],
     views: [
         'MainView'

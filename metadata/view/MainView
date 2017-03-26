@@ -273,6 +273,80 @@
                             ]
                         },
                         {
+                            "type": "Ext.chart.Chart",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "animate": [
+                                    "true"
+                                ],
+                                "height": 250,
+                                "id": "activityColumnChart",
+                                "insetPadding": 20,
+                                "store": "GoogleFitStore",
+                                "width": 400
+                            },
+                            "designerId": "10e75268-2596-4e80-8570-613b41fab009",
+                            "isBuiltIn": true,
+                            "iconCls": "icon-column-chart",
+                            "autoName": "ColumnChart",
+                            "cn": [
+                                {
+                                    "type": "Ext.chart.axis.Time",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dateFormat": "m/d",
+                                        "fields": [
+                                            "date"
+                                        ],
+                                        "position": "bottom",
+                                        "title": "Time Axis"
+                                    },
+                                    "designerId": "6d583dcc-93ee-4743-aa8d-82b836de8ea4"
+                                },
+                                {
+                                    "type": "Ext.chart.axis.Numeric",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fields": [
+                                            "y"
+                                        ],
+                                        "title": "Numeric Axis"
+                                    },
+                                    "designerId": "b62946e9-9c9a-4589-803b-81348bd4d581"
+                                },
+                                {
+                                    "type": "Ext.chart.series.Column",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": [
+                                            "{'display':'insideEnd','field':'y','color':'#333','text-anchor':'middle'}"
+                                        ],
+                                        "xField": "x",
+                                        "yField": [
+                                            "y"
+                                        ]
+                                    },
+                                    "designerId": "dd848deb-d12c-42a3-8d60-39010b27ea8e"
+                                }
+                            ]
+                        },
+                        {
                             "type": "basicfunction",
                             "reference": {
                                 "name": "items",

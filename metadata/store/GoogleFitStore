@@ -1,0 +1,82 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GoogleFitStore",
+        "itemId": "GoogleFitStore",
+        "storeId": "GoogleFitStore"
+    },
+    "designerId": "eb7f5ff0-8834-4d84-9e88-02795d296902",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "itemId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "5bd88607-1ab4-49c2-935c-9ec907c344c1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "0fe33499-fcdd-4f4f-b72c-ba86b89a968a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "date",
+                "type": "date"
+            },
+            "designerId": "4485bfea-07ce-4afc-bed2-b162ff2e068e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "calories",
+                "type": "int"
+            },
+            "designerId": "52947487-8d62-4b4c-9257-48ae44763e83"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "steps",
+                "type": "int"
+            },
+            "designerId": "052d016c-f1b9-4a4a-ba54-e23450e8558e"
+        }
+    ]
+}

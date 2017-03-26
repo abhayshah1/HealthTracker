@@ -11,12 +11,13 @@
         ],
         "models": [
             "Vitals",
-            "VitalsType"
+            "ChartElements"
         ],
         "name": "HealthTracker",
         "stores": [
             "VitalsStore",
-            "ChartElementStore"
+            "ChartElementStore",
+            "GoogleFitStore"
         ],
         "views": [
             "MainView"
@@ -32,8 +33,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "disableCaching": false,
-                "enabled": true
+                "disableCaching": false
             },
             "designerId": "38862959-23f6-4023-8405-5fadc9f9531f"
         }
