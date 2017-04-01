@@ -6,6 +6,35 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        \"date\": \"2017-07-15T09:54:14.024Z\",\r",
+            "        \"calories\": 594,\r",
+            "        \"steps\": 704\r",
+            "    },\r",
+            "    {\r",
+            "        \"date\": \"2017-04-08T21:50:29.024Z\",\r",
+            "        \"calories\": 976,\r",
+            "        \"steps\": 360\r",
+            "    },\r",
+            "    {\r",
+            "        \"date\": \"2017-07-06T06:35:05.024Z\",\r",
+            "        \"calories\": 315,\r",
+            "        \"steps\": 684\r",
+            "    },\r",
+            "    {\r",
+            "        \"date\": \"2017-04-08T16:16:19.024Z\",\r",
+            "        \"calories\": 747,\r",
+            "        \"steps\": 180\r",
+            "    },\r",
+            "    {\r",
+            "        \"date\": \"2017-04-06T09:20:18.024Z\",\r",
+            "        \"calories\": 251,\r",
+            "        \"steps\": 260\r",
+            "    }\r",
+            "]"
+        ],
         "designer|userClassName": "GoogleFitStore",
         "itemId": "GoogleFitStore",
         "storeId": "GoogleFitStore"
@@ -20,13 +49,16 @@
     ],
     "cn": [
         {
-            "type": "Ext.data.proxy.JsonP",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
-            "designerId": "5bd88607-1ab4-49c2-935c-9ec907c344c1",
+            "userConfig": {
+                "url": "data/activitydata.json"
+            },
+            "designerId": "0b5d8446-b182-4029-b2f4-526a96120194",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -35,7 +67,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "designerId": "0fe33499-fcdd-4f4f-b72c-ba86b89a968a"
+                    "designerId": "96f0fa43-2a6b-48f1-8c75-5ea458ace1ed"
                 }
             ]
         },

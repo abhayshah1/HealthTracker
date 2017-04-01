@@ -211,16 +211,23 @@ Ext.define('HealthTracker.view.MainView', {
                                             fields: [
                                                 'date'
                                             ],
+                                            majorTickSteps: 10,
                                             position: 'bottom',
-                                            title: 'Time Axis',
-                                            dateFormat: 'm/d'
+                                            title: 'Date',
+                                            dateFormat: 'm/y',
+                                            fromDate: 'Fri Jan 01 2016 00:00:00 GMT-0500 (Eastern Standard Time)',
+                                            step: [
+                                                Ext.Date.YEAR,
+                                                1
+                                            ],
+                                            toDate: 'Sat Dec 31 2016 00:00:00 GMT-0500 (Eastern Standard Time)'
                                         },
                                         {
                                             type: 'Numeric',
                                             fields: [
-                                                'y'
+                                                'steps'
                                             ],
-                                            title: 'Numeric Axis',
+                                            title: 'Steps',
                                             position: 'left'
                                         }
                                     ],
@@ -233,8 +240,8 @@ Ext.define('HealthTracker.view.MainView', {
                                                 color: '#333',
                                                 'text-anchor': 'middle'
                                             },
-                                            xField: 'x',
-                                            yField: 'y'
+                                            xField: 'date',
+                                            yField: 'steps'
                                         }
                                     ]
                                 }

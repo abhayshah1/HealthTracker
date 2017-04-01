@@ -302,12 +302,18 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dateFormat": "m/d",
+                                        "dateFormat": "m/y",
                                         "fields": [
                                             "date"
                                         ],
+                                        "fromDate": 1451624400000,
+                                        "majorTickSteps": 10,
                                         "position": "bottom",
-                                        "title": "Time Axis"
+                                        "step": [
+                                            "[Ext.Date.YEAR,1]"
+                                        ],
+                                        "title": "Date",
+                                        "toDate": 1483160400000
                                     },
                                     "designerId": "6d583dcc-93ee-4743-aa8d-82b836de8ea4"
                                 },
@@ -320,9 +326,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fields": [
-                                            "y"
+                                            "steps"
                                         ],
-                                        "title": "Numeric Axis"
+                                        "title": "Steps"
                                     },
                                     "designerId": "b62946e9-9c9a-4589-803b-81348bd4d581"
                                 },
@@ -337,9 +343,9 @@
                                         "label": [
                                             "{'display':'insideEnd','field':'y','color':'#333','text-anchor':'middle'}"
                                         ],
-                                        "xField": "x",
+                                        "xField": "date",
                                         "yField": [
-                                            "y"
+                                            "steps"
                                         ]
                                     },
                                     "designerId": "dd848deb-d12c-42a3-8d60-39010b27ea8e"

@@ -17,7 +17,7 @@ Ext.define('HealthTracker.store.GoogleFitStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'Ext.data.proxy.JsonP',
+        'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
         'Ext.data.Field'
     ],
@@ -28,8 +28,36 @@ Ext.define('HealthTracker.store.GoogleFitStore', {
         me.callParent([Ext.apply({
             itemId: 'GoogleFitStore',
             storeId: 'GoogleFitStore',
+            data: [
+                {
+                    date: '2017-07-15T09:54:14.024Z',
+                    calories: 594,
+                    steps: 704
+                },
+                {
+                    date: '2017-04-08T21:50:29.024Z',
+                    calories: 976,
+                    steps: 360
+                },
+                {
+                    date: '2017-07-06T06:35:05.024Z',
+                    calories: 315,
+                    steps: 684
+                },
+                {
+                    date: '2017-04-08T16:16:19.024Z',
+                    calories: 747,
+                    steps: 180
+                },
+                {
+                    date: '2017-04-06T09:20:18.024Z',
+                    calories: 251,
+                    steps: 260
+                }
+            ],
             proxy: {
-                type: 'jsonp',
+                type: 'ajax',
+                url: 'data/activitydata.json',
                 reader: {
                     type: 'json'
                 }
